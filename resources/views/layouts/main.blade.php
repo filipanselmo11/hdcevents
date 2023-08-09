@@ -21,13 +21,37 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                @yield('page-title')
-            </a>
-        </div>
-    </nav>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="collapse navbar-collapse" id="navbar">
+                <a class="navbar-brand" href="#">
+                    @yield('page-title')
+                </a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            Eventos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/events/create" class="nav-link">
+                            Criar Eventos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            Entrar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            Cadastrar
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     @yield('content')
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -36,8 +60,8 @@
             </p>
         </footer>
     </div>
-    <footer>
-    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
