@@ -3,12 +3,35 @@
 @section('title', 'HDC Events')
 @section('page-title', 'Bem vindo ao HDC EVENTS')
 @section('content')
-<div class="container text-center">
-    <h1>Olá</h1>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit augue in leo varius, eget cursus tellus condimentum. Aliquam blandit enim ligula, sed aliquet risus suscipit at. Sed pharetra ornare erat, eleifend fringilla ipsum fringilla non. Donec diam ex, fermentum dictum arcu quis, sagittis dignissim sem. Sed ipsum enim, congue sed consectetur sit amet, commodo vel dolor. Integer commodo a nibh ac efficitur. Praesent sed lacinia elit, a hendrerit mauris.
-        Vivamus id tellus mauris. In hac habitasse platea dictumst. Maecenas commodo, nisl at molestie scelerisque, quam augue interdum libero, ac pretium lacus velit non diam. Morbi eu dui tellus. Praesent sit amet blandit augue, pharetra dapibus tortor. Phasellus id scelerisque purus. Nunc turpis lectus, rhoncus nec pretium ac, cursus vel massa. Nam sed est viverra, feugiat augue sit amet, consectetur purus. Nam dictum dolor turpis. Donec hendrerit, eros quis vestibulum feugiat, libero tellus ornare mi, at placerat ex odio quis enim. Mauris risus sapien, fermentum ac nulla quis, mollis vehicula velit. Nunc lacinia, mi id consectetur dignissim, libero felis egestas purus, vel scelerisque ligula nisl vel leo. Cras blandit non augue eget porttitor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla interdum vitae leo sed tempor.
+
+<div id="search-container" class="col-md-12">
+    <h1>Busque um evento</h1>
+    <form action="">
+        <input type="text" id="search" class="form-control" placeholder="Procurar">
+    </form>
+</div>
+<div id="events-container" class="col-md-12">
+    <h2>Próximos Eventos</h2>
+    <p class="subtitle">
+        Veja os eventos dos próximos dias
     </p>
+    <div id="cards-container" class="row">
+        @foreach($events as $event)
+        <div class="card col-md-3">
+            <img src="https://c4.wallpaperflare.com/wallpaper/39/346/426/digital-art-men-city-futuristic-night-hd-wallpaper-preview.jpg" alt="{{ $event->title }}">
+            <div class="card-body">
+                <p class="card-date">10/09/2020</p>
+                <h5 class="card-title">
+                    {{$event->title}}
+                </h5>
+                <p class="card-participants">
+                    X Participantes
+                </p>
+                <a href="#" class="btn btn-primary">Saber mais</a>
+            </div>
+        </div>
+        @endforeach
+    </div>
 
 </div>
 @endsection
