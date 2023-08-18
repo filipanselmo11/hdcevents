@@ -18,7 +18,7 @@
     <div id="cards-container" class="row">
         @foreach($events as $event)
         <div class="card col-md-3">
-            <img src="https://c4.wallpaperflare.com/wallpaper/39/346/426/digital-art-men-city-futuristic-night-hd-wallpaper-preview.jpg" alt="{{ $event->title }}">
+            <img src="/img/events/{{ $event->image }}" alt="{{ $event->title }}">
             <div class="card-body">
                 <p class="card-date">10/09/2020</p>
                 <h5 class="card-title">
