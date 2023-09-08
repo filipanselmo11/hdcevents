@@ -16,7 +16,7 @@ use App\Http\Controllers\EventController;
 
 
 Route::get('/', [EventController::class, 'index']);
-Route::get('/events/create', [EventController::class, 'create']);
+Route::get('/events/create', [EventController::class, 'create'])->middleware('auth');
 Route::post('/events', [EventController::class, 'store']);
 Route::get('/events/{id}', [EventController::class, 'show']);
 // Route::get('/products', function() {
@@ -28,3 +28,13 @@ Route::get('/events/{id}', [EventController::class, 'show']);
 // Route::get('/product_teste/{id}', function($id = null) {
 //     return view('product', ['id' => $id]);
 // });
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
