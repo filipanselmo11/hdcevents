@@ -23,7 +23,7 @@
                 </p>
                 <p class="event-owner">
                     <ion-icon name="star-outline"></ion-icon>
-                    Dono do Evento
+                    {{ $eventOwner['name'] }}
                 </p>
                 <a href="#" class="btn btn-primary" id="event-submit">
                     Confirmar Presença
